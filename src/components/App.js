@@ -1,90 +1,7 @@
-import { useState, useEffect } from "react";
-import React from 'react';
-
-function Loading() {
-  return (
-    <div style={{ textAlign: "center", marginTop: "2rem" }}>
-      <h1>Loading...</h1>
-    </div>
-  );
-}
-
-function Tour({ id, name, info, image, price, removeTour }) {
-  const [readMore, setReadMore] = useState(false);
-
-  return (
-    <article
-      style={{
-        border: "1px solid #ddd",
-        borderRadius: "8px",
-        margin: "1rem",
-        padding: "1rem",
-        boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-      }}
-    >
-      <img
-        src={image}
-        alt={name}
-        style={{ width: "100%", borderRadius: "8px" }}
-      />
-      <div style={{ marginTop: "1rem" }}>
-        <h4 style={{ fontSize: "1.25rem", fontWeight: "bold" }}>{name}</h4>
-        <h4 style={{ color: "#1e90ff", fontWeight: "bold" }}>${price}</h4>
-        <p style={{ lineHeight: "1.6" }}>
-          {readMore ? info : `${info.substring(0, 200)}...`}
-          <button
-            style={{
-              background: "none",
-              color: "#1e90ff",
-              border: "none",
-              cursor: "pointer",
-              marginLeft: "5px",
-            }}
-            onClick={() => setReadMore(!readMore)}
-          >
-            {readMore ? "Show less" : "Read more"}
-          </button>
-        </p>
-        <button
-          style={{
-            backgroundColor: "#ff6b6b",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            padding: "0.5rem 1rem",
-            cursor: "pointer",
-          }}
-          onClick={() => removeTour(id)}
-        >
-          Not Interested
-        </button>
-      </div>
-    </article>
-  );
-}
-
-function Tours({ tours, removeTour }) {
-  return (
-    <section style={{ width: "90%", maxWidth: "1200px", margin: "2rem auto" }}>
-      <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-        <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Our Tours</h2>
-        <div
-          style={{
-            width: "6rem",
-            height: "4px",
-            backgroundColor: "#1e90ff",
-            margin: "0.5rem auto",
-          }}
-        ></div>
-      </div>
-      <div>
-        {tours.map((tour) => (
-          <Tour key={tour.id} {...tour} removeTour={removeTour} />
-        ))}
-      </div>
-    </section>
-  );
-}
+import React, { useState, useEffect } from "react";
+import Tour from "./Tour.js";
+import Loading from "./Loading.js";
+import Tours from "./Tours.js";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -184,7 +101,7 @@ function App() {
   }
 
   return (
-    <main id='main'>
+    <main>
       <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
