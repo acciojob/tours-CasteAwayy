@@ -6,6 +6,7 @@ function Tour({ id, name, info, image, price, removeTour }) {
 
   return (
     <article
+      className="single-tour"
       style={{
         border: "1px solid #ddd",
         borderRadius: "8px",
@@ -21,8 +22,13 @@ function Tour({ id, name, info, image, price, removeTour }) {
       />
       <div style={{ marginTop: "1rem" }}>
         <h4 style={{ fontSize: "1.25rem", fontWeight: "bold" }}>{name}</h4>
-        <h4 style={{ color: "#1e90ff", fontWeight: "bold" }}>${price}</h4>
-        <p style={{ lineHeight: "1.6" }}>
+        <h4
+          className="tour-price"
+          style={{ color: "#1e90ff", fontWeight: "bold" }}
+        >
+          ${price}
+        </h4>
+        <p className="tour-info" style={{ lineHeight: "1.6" }}>
           {readMore ? info : `${info.substring(0, 200)}...`}
           <button
             style={{
@@ -38,6 +44,7 @@ function Tour({ id, name, info, image, price, removeTour }) {
           </button>
         </p>
         <button
+          className="delete-btn"
           style={{
             backgroundColor: "#ff6b6b",
             color: "white",
