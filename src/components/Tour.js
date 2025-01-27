@@ -44,7 +44,7 @@ function Tour({ id, name, info, image, price, removeTour }) {
           </button>
         </p>
         <button
-          id="delete-btn"
+          id="delete-btn-rec6d6T3q5EBIdCfD"
           className="delete-btn"
           style={{
             backgroundColor: "#ff6b6b",
