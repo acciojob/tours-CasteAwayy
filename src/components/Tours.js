@@ -4,7 +4,9 @@ function Tours({ tours, removeTour }) {
   return (
     <section style={{ width: "90%", maxWidth: "1200px", margin: "2rem auto" }}>
       <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-        <h2 style={{ fontSize: "2rem", fontWeight: "bold" }}>Our Tours</h2>
+        <h2 style={{ fontSize: "2rem", fontWeight: "bold" }} className="title">
+          Our Tours
+        </h2>
         <div
           style={{
             width: "6rem",
