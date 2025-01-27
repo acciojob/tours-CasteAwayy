@@ -28,7 +28,7 @@ function Tour({ id, name, info, image, price, removeTour }) {
         >
           ${price}
         </h4>
-        <p className="tour-info" style={{ lineHeight: "1.6" }}>
+        <p id="tour-item-para-rec6d6T3q5EBIdCfD" className="tour-info" style={{ lineHeight: "1.6" }}>
           {readMore ? info : `${info.substring(0, 200)}...`}
           <button
             style={{
